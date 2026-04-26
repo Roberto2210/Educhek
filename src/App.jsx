@@ -6,6 +6,7 @@ import {
   CheckCircle, ArrowRight, Quote,
 } from 'lucide-react'
 import logoImg from './assets/logo.png'
+import inicioImg from './assets/inicio.png'
 
 // ─── CSS ──────────────────────────────────────────────────────────────────────
 
@@ -482,10 +483,6 @@ function Hero() {
       <div className="wrap">
         <div className="hero-grid">
           <div>
-            <div className="hero-pretag" style={{ animation: 'fadeUp .55s ease both' }}>
-              <div className="badge-dot" />
-              Sistema activo en escuelas de México
-            </div>
             <h1 className="hero-h1" style={{ animation: 'fadeUp .65s .1s ease both' }}>
               Tu escuela<br />
               siempre sabe<br />
@@ -516,8 +513,12 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div style={{ animation: 'fadeIn .9s .35s ease both' }}>
-            <DashboardMockup />
+          <div style={{ animation: 'fadeIn .9s .35s ease both, floatY 5.5s 1s ease-in-out infinite' }}>
+            <img
+              src={inicioImg}
+              alt="Panel de reconocimiento facial"
+              style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block', borderRadius: '20px' }}
+            />
           </div>
         </div>
       </div>
