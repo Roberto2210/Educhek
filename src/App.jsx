@@ -6,7 +6,8 @@ import {
   CheckCircle, ArrowRight, Quote,
 } from 'lucide-react'
 import logoImg from './assets/logo.png'
-import inicioImg from './assets/inicio.png'
+import fondoImg from './assets/fondo.png'
+import fondoMovilImg from './assets/fondomovil.png'
 
 // ─── CSS ──────────────────────────────────────────────────────────────────────
 
@@ -302,6 +303,21 @@ section { padding:96px 0; }
 
 const GlobalStyles = () => <style dangerouslySetInnerHTML={{ __html: css }} />
 
+const HeroBg = () => (
+  <style>{`
+    #inicio {
+      background-image: url(${fondoImg});
+      background-size: cover;
+      background-position: center;
+    }
+    @media (max-width: 768px) {
+      #inicio {
+        background-image: url(${fondoMovilImg});
+      }
+    }
+  `}</style>
+)
+
 // ─── Hooks ────────────────────────────────────────────────────────────────────
 
 function useInView(threshold = 0.12) {
@@ -512,13 +528,6 @@ function Hero() {
                 <div className="proof-txt">Notificaciones</div>
               </div>
             </div>
-          </div>
-          <div style={{ animation: 'fadeIn .9s .35s ease both, floatY 5.5s 1s ease-in-out infinite' }}>
-            <img
-              src={inicioImg}
-              alt="Panel de reconocimiento facial"
-              style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block', borderRadius: '20px' }}
-            />
           </div>
         </div>
       </div>
@@ -1025,6 +1034,7 @@ export default function App() {
   return (
     <>
       <GlobalStyles />
+      <HeroBg />
       <Navbar />
       <main>
         <Hero />
